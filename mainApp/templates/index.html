@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="my portfolio website to showcase the work I have done so far, the services I provide and all my professionals life.">
+    <title>Asheesh Jaysawal</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <header class="header">
+      <img src="{% static 'images/logo1.png' %}" alt="asheesh logo" class="logo"/>
+      <nav class="navbar">
+        <ul class="navbar-lists">
+          <li><a class="navbar-link home-link" href="/" >Home</a></li>
+          <li><a class="navbar-link about-link" href="#education-section">About</a></li>
+          <li><a class="navbar-link service-link" href="#service-section">Services</a></li>
+          <li><a class="navbar-link portfolio-link" href="#portfolio-section">Portfolio</a></li>
+          <li><a class="navbar-link contact-link" href="#contact-section" >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mobile-navbar-btn">
+        <ion-icon
+          class="mobile-nav-icon"
+          name="menu-outline"
+          class="mobile-nav-icon"
+        ></ion-icon>
+
+        <ion-icon
+          class="mobile-nav-icon"
+          name="close-outline"
+          class="mobile-nav-icon"
+        ></ion-icon>
+      </div>
+    </header>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert">
+     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+     <p><strong>{{message}}</strong></p>
+   </div>
+     {% endfor %}
+ {% endif %}
+    <!-- ======================================== 
+          Our Main Hero Section Start  
+    ========================================  -->
+    <main>
+      <section class="section-hero section">
+        <div class="container grid grid-two-col">
+          <div class="section-hero-image">
+            <img src="{% static 'images/prog1.jpg' %}" alt="hero image" class="hero-img" />
+          </div>
+          <div class="section-hero-data">
+            <p class="hero-top-data">this is me</p>
+            <h1 class="hero-heading">Asheesh jaysawal</h1>
+            <p class="hero-para">
+              I'm Asheesh kumar jaysawal. A Full stack Developer, Tutor and
+              freelancer. A Python Django developer & Developed  Rest API using DRF.
+            </p>
+            <div>
+              <a href="{% url 'hireme' %}" class="btn"> HIRE ME </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Education Section-->
+   <section class="section-resume section " id="education-section">
+    <div class="container grid grid-two-col">
+      <!-- resume left side  -->
+      <div class="resume-img">
+        <img src="{% static 'images/code.jpg' %}" alt="my resume pic" 
+            data-src="{% static 'images/code.jpg' %}"
+            loading="lazy"
+            class="lazy-img"
+          />
+      </div>
+
+      <!-- resume right side  -->
+      <div class="resume-data">
+        <h2 class="common-heading">Education</h2>
+    
+        <!-- Education section  -->
+        <div class="resume-data-bottom-subsection"> 
+          
+       
+          <!-- 1st college  -->
+          <div class="resume-data-subsection margin-small">
+            <div class="resume-data-left">
+              <h2>Master in Computer Science</h2>
+              <div class="grid grid-two-col">
+                <p>
+                  <ion-icon name="business-outline"></ion-icon> J.S University
+                </p>
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> Shikohabad, UP
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-data-right">
+              <p class="resume-data-button"> Masters</p>
+              <p>
+                <ion-icon name="calendar-outline"></ion-icon>  <span>May 2020 - 2022 </span
+                > 
+              </p>
+            </div>
+          </div>
+
+           <!-- 2nd college  -->
+          <div class="resume-data-subsection ">
+            <div class="resume-data-left">
+              <h2>Bachelor in  Science</h2>
+              <div class="grid grid-two-col">
+                <p>
+                    <ion-icon name="business-outline"></ion-icon> VBSPU
+                </p>
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> Jaunpur, UP
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-data-right">
+              <p class="resume-data-button"> Bachelor </p>
+              <p>
+                <ion-icon name="calendar-outline"></ion-icon>  <span>May 2013 - 2016 </span
+                > 
+              </p>
+            </div>
+          </div>
+          <!-- end  -->
+           <!-- 3nd college  -->
+           <div class="resume-data-subsection ">
+            <div class="resume-data-left">
+              <h2>Diploma In Information Technology</h2>
+              <div class="grid grid-two-col">
+                <p>
+                    <ion-icon name="business-outline"></ion-icon> BTEUP
+                </p>
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> LUCKNOW, UP
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-data-right">
+              <p class="resume-data-button"> Diploma </p>
+              <p>
+                <ion-icon name="calendar-outline"></ion-icon>  <span>May 2017 - 2020 </span
+                > 
+              </p>
+            </div>
+          </div>
+          <!-- end  -->
+           <!-- 4nd college  -->
+           <div class="resume-data-subsection ">
+            <div class="resume-data-left">
+              <h2>Senior high school</h2>
+              <div class="grid grid-two-col">
+                <p>
+                    <ion-icon name="business-outline"></ion-icon> UP Board
+                </p>
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> PRAYAGRAJ, UP
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-data-right">
+              <p class="resume-data-button"> Senior high school </p>
+              <p>
+                <ion-icon name="calendar-outline"></ion-icon>  <span>June 2013</span
+                > 
+              </p>
+            </div>
+          </div>
+          <!-- end  -->
+           <!-- 5nd college  -->
+           <div class="resume-data-subsection ">
+            <div class="resume-data-left">
+              <h2>High School</h2>
+              <div class="grid grid-two-col">
+                <p>
+                    <ion-icon name="business-outline"></ion-icon> UP Board
+                </p>
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> PRAYAGRAJ, UP
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-data-right">
+              <p class="resume-data-button"> Diploma </p>
+              <p>
+                <ion-icon name="calendar-outline"></ion-icon>  <span>May 2010 </span
+                > 
+              </p>
+            </div>
+          </div>
+          <!-- end  -->
+        </div>
+      </div>
+    </div>
+    
+  </section>
+   <!--End Education Section-->
+   <!-- ======================================== 
+          Our Service Section Start  
+    ========================================  -->
+    <section class="section-services section " id="service-section">
+      <div class="container">
+        <h2 class="common-heading">Services Offer</h2>
+      </div>
+
+      <div class="container grid grid-three-col">
+        <div class="service-box">
+          <ion-icon class="service-icon" name="desktop-outline"></ion-icon>
+          <h3>web Design</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+
+        <div class="service-box">
+          <ion-icon name="logo-react" class="service-icon"></ion-icon>
+          <h3>web development</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+
+        <div class="service-box">
+          <ion-icon class="service-icon" name="logo-android"></ion-icon>
+          <h3>Android Application</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+
+        <div class="service-box">
+          <ion-icon class="service-icon" name="server-outline"></ion-icon>
+          <h3>website hosting</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+        <div class="service-box">
+          <ion-icon class="service-icon" name="logo-python"></ion-icon>
+          <h3>Python Developer</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+        <div class="service-box">
+          <ion-icon class="service-icon" name="archive-outline"></ion-icon>
+          <h3>graphic design</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================== 
+        Portfolio works Section Start  
+    ========================================  -->
+    <section class="section-portfolio section " id="portfolio-section">
+      <div class="container">
+        <h2 class="common-heading">Latest works</h2>
+      </div>
+
+      <div class="container p-btns">
+        <a href="{% url 'project' %}" class="btn p-btn " data-btn-num="1" >See More Projects</a>
+        
+      </div>
+      
+      <div class="container grid grid-three-col portfolio-images">
+        <div class="img-ovelay p-btn--1" >
+          <img src="{% static 'images/TechBlog.jpg' %}" loading="lazy" alt="portfolio images "  />
+          <div class="overlay">
+            <a href="https://techblog7985.pythonanywhere.com/" target="_blank"  class="common-heading">TechBlog</a>
+          </div>
+        </div>
+
+        <div class="img-ovelay p-btn--3">
+          <img src="{% static 'images/karma1.jpg' %}" loading="lazy" alt="portfolio images " />
+          <div class="overlay">
+             <a href="http://karma7985.pythonanywhere.com/" target="_blank"  class="common-heading">karma Shop</a>
+          </div>
+        </div>
+
+        <div class="img-ovelay p-btn--1">
+          <img src="{% static 'images/covidtracker.jpg' %}" loading="lazy" alt="portfolio images "  />
+          <div class="overlay">
+             <a href="http://arman9807.pythonanywhere.com/" target="_blank"  class="common-heading">Covid Tracker</a>
+          </div>
+        </div>
+        <div class="img-ovelay p-btn--1 p-btn--2">
+          <img src="{% static 'images/resumeuploader.jpg' %}" loading="lazy" alt="portfolio images "  />
+          <div class="overlay">
+             <a href="http://resumeuploader.pythonanywhere.com/" target="_blank"  class="common-heading">Resume Uploader</a>
+          </div>
+        </div>
+        <div class="img-ovelay p-btn--2">
+          <img src="{% static 'images/resumeproject.jpg' %}" loading="lazy" alt="portfolio images "  />
+          <div class="overlay">
+             <a href="http://resumeproject7985.pythonanywhere.com/" target="_blank"  class="common-heading">Portfolio Project</a>
+          </div>
+        </div>
+        <div class="img-ovelay p-btn--1">
+          <img src="{% static 'images/monamitrip.jpg' %}" loading="lazy" alt="portfolio images "  />
+          <div class="overlay">
+             <a href="http://monamitrip7985.pythonanywhere.com/" target="_blank"  class="common-heading">Mon Ami's Trip</a>
+          </div>
+        </div>
+      </div>
+    </section>
+     <!-- ======================================== 
+           Bio Data Section Start  
+    ========================================  -->
+    <section class="section-biodata section">
+      <div class="container grid grid-two-col">
+        <div class="bio-image">
+          <img src="{% static 'images/Code3.jpg' %}" alt="bio data image" />
+        </div>
+        <div class="bio-data">
+          <h2 class="common-heading">Skills</h2>
+
+          <div class="bio-data-stats">
+            <div class="bio-stats">
+              <h3>HTML 5</h3>
+              <div class="bio-progress-bar">
+                <span>75%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>CSS 3</h3>
+              <div class="bio-progress-bar bio-progress-2">
+                 <span>60%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>JavaScript</h3>
+              <div class="bio-progress-bar bio-progress-3">
+                 <span>50%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>Python</h3>  
+              <div class="bio-progress-bar bio-progress-4">
+                 <span>85%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>Django</h3>
+              <div class="bio-progress-bar bio-progress-5">
+                 <span>70%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>Django Rest Framewoek</h3>
+              <div class="bio-progress-bar bio-progress-6">
+                 <span>60%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>React JS</h3>
+              <div class="bio-progress-bar bio-progress-7">
+                 <span>20%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bio-data-btn">
+            <a href="{% static 'images/asheeshResume1.docx' %}" class="btn" download> Downlaod CV </a>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- ======================================== 
+         freelancing Section   
+    ========================================  -->
+
+    <section class="section section-freelancer ">
+      <div class="overlay"></div>
+      <div class="container">
+      <h2 >I am <span> available </span> for freelancing</h2>
+     
+      <a href="{% url 'hireme' %}" class="btn"> HIRE ME </a>
+      </div>
+    </section>
+
+       <!-- ======================================== 
+          Our  Cotnact Us Section   
+    ========================================  -->
+
+      <section class="section section-contact " id="contact-section">
+        
+        <div class="container">
+          <h2 class="common-heading">contact us</h2>
+        </div>
+
+        <div class="section-contact-main contact-container">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class=" grid grid-two-col">
+              <input type="text" name="name" id="" required placeholder="Name">
+              <input type="email" name="email" required placeholder="Email" autocomplete="false">
+            </div>
+            <div>
+              <input type="text" name="subject" placeholder="Subject">
+            </div>
+             <div>
+               <textarea name="message" id="" placeholder="Message"></textarea>
+             </div>
+
+             <div>
+               <button type="submit"  class="btn">Send</button>
+             </div>
+          </form>
+        </div>
+      </section>
+
+   <!-- ======================================== 
+          Our footer Section   
+    ========================================  -->
+
+    <footer class="section section-footer " >
+      <div class="container grid grid-four-col">
+        <div class="f-about">
+          <h3>About</h3>
+          <p>I'm Asheesh kumar jaysawal. A Full stack Developer, Tutor and freelancer. A Python Django developer & Developed Rest API using DRF.</p>
+        </div>
+
+        <div class="f-links">
+           <h3>Links</h3>
+          <ul>
+            <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="/">home</a></li>
+             <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#education-section">about</a></li>
+              <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#service-section">services</a></li>
+               <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#portfolio-section">portfolio</a></li>
+              
+                 <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#contact-section">contact</a></li>
+          </ul>
+        </div>
+
+         <div class="f-services">
+            <h3>Services</h3>
+          <ul>
+            <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">web design</a></li>
+             <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">web development</a></li>
+              <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Python Project</a></li>
+           
+                <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Rest API</a></li>
+                 <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Hosting</a></li>
+          </ul>
+        </div>
+
+        <div class="f-address"> 
+          <h3>Have a Questions?</h3>
+          <address>
+            <div>
+              <p>  <span><ion-icon name="location-outline"></ion-icon></span> Lucknow, India </p>
+            </div>
+
+            <div>
+              <p>  <span><ion-icon name="call-outline"></ion-icon></span> <a href="tel:+9807886296"> +91 9807886296 </a></p>
+            </div>
+
+            <div>
+              <p>  <span><ion-icon name="mail-outline"></ion-icon></span> <a href="mailto:ashishjaiswal9807@gmail.com">ashishjaiswal9807@gmail.com</a> </p>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="f-social-icons">
+          <a href="https://www.instagram.com/jais_asheeh/" target="_blank">
+            <ion-icon class="icons" name="logo-instagram"></ion-icon>
+          </a>
+
+            <a href="https://www.linkedin.com/in/asheesh-kumar-jaysawal-b38731221/" target="_blank">
+           <ion-icon class="icons" name="logo-linkedin"></ion-icon>
+          </a>
+
+            <a href="https://github.com/AsheeshJays" target="_blank">
+           <ion-icon class="icons" name="logo-github"></ion-icon>
+          </a>
+        </div>
+
+        <div class="f-credits">
+          <p>Copyright ©2022 All rights reserved | This Website is made with ❤ by Asheesh jaiswal</p>
+        </div>
+      </div>
+
+    </footer>
+
+
+
+    <!-- ======================================== 
+          Our JavaScript Section   
+    ========================================  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
+</html>
